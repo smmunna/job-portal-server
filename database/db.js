@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 
 // For Running Locally
-const uri = "mongodb://127.0.0.1:27017/jobsDB";
+// .const uri = "mongodb://127.0.0.1:27017/jobsDB";
 
 // MongoDB Atlas connection URL
-// const uri = `mongodb+srv://<username>:<password>@cluster0.rvrwrto.mongodb.net/<database>?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.rvrwrto.mongodb.net/jobportalDB?retryWrites=true&w=majority`;
 
 // Establish the connection
 mongoose.connect(uri, {
